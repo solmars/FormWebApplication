@@ -15,6 +15,8 @@ For example, the user is able to create forms that would allow for adding depend
 
 Simply press the 'run' file present in this folder and open your browser on localhost:8080 url.
 
+Note: you must have maven and java 11.
+
 ### Technologies
 
 This web application was made using primarily java and javascript.
