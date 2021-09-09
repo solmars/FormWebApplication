@@ -1,0 +1,2 @@
+To rebuild after changing FormScriptGrammar.g4 file, input on FormScriptGrammar.g4 location:
+antlr -o . -package project.formWebApp.antlr.formscript.generated -no-listener -visitor FormScriptGrammar.g4

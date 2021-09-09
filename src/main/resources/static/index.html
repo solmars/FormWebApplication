@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormWebApp</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="general.js"></script>
+    <script src="form.js"></script>
+    <script src="formAnswer.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="howToUse.js"></script>
+    <script src="about.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body onload="formWebAppOnLoad()">
+    <br><br>
+    <template id="formCreationTemplate">
+        <form class="indexForm" id="indexFormTemplate" onsubmit="createFormObject();return false;">
+            <div id="formCreationTemplateAttributesDiv">
+                <div class ="formInfo">
+                    <label class="formLbl">Form name:</label>
+                    <input type="text" name="formNameInput" required="required"><br><br>
+                    <label class="formLbl">Form description:</label>
+                    <input type="text" name="formDescriptionInput" required="required"><br>
+                </div>
+                <br><br>
+                <div id="formAttributeTemplate" class="attributeTemplate">
+                    <label class="formLbl">Variable name:</label>
+                    <input type="text" placeholder="e.g: v_1" required="required" name="variableNameInput"
+                        pattern="v_[0-9]+"><br><br>
+                    <label class="formLbl">Description:</label>
+                    <input type="text" required="required" name="descriptionNameInput"><br><br>
+                    <label class="formLbl">Regular expression:</label>
+                    <input type="text" name="regexValidationInput"><br><br>
+                    <label class="formLbl">Grammar rule:</label>
+                    <input type="text" name="grammarRulesInput"><br>
+                    <div id="new_rulesbutton0"></div>
+                    <br>
+                    <button type="button" id=button0 onclick="return addGrammarRule(this.id);"
+                        style="margin-left: 153px;" class="btn">Add grammar rule</button><br><br>
+
+                    <label class="formLbl">Data type:</label>
+                    <!-- TODO: change to get this info from backend. -->
+                    <select class="dataTypes" name="dataTypesInput">
+                        <option value="INTEGER">Integer</option>
+                        <option value="DATE">Date</option>
+                        <option value="BOOLEAN">Boolean</option>
+                        <option value="STRING">String</option>
+                        <option value="FILE">File</option>
+                    </select>
+                    <br>
+                </div>
+                <input type="hidden" value="1" id="total_rules">
+                <div id="new_form_attributes"><br><br></div>
+                <button type="button" onclick="return addFormAttribute();" style="margin-left: 153px;"
+                    class='btn btn--attribute'>Add Form attribute</button><br><br>
+                <input type="hidden" value="1" id="total_attributes">
+                <br><br>
+                <button type="submit" class='btn btn--form'>Create form</button><br><br>
+                <label id="formValidation" class="hidden"></label><br><br>
+            </div>
+        </form>
+    </template>
+    <div id="mainDiv">
+    </div>
+    <div class="sidebar" id='sidebarDiv'>
+        <a data-url="/formCreation">Form creation</a>
+        <a data-url="/answerForm">Answer form</a>
+        <a data-url="/howToUse">How to use</a>
+        <a data-url="/about">About</a>
+    </div>
+
+    <!-- <footer> -->
+    <!-- <p>Author: Daniel Carvalho</p> -->
+    <!-- <p><a href="mailto:danielmcarvalho0801@gmail.com">danielmcarvalho0801@gmail.com</a></p> -->
+    <!-- </footer> -->
+
+</body>
+
+</html>
