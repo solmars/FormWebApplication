@@ -36,7 +36,7 @@ The following are some of the technologies used to obtain the back end functiona
 -ANTLR parser
 
 
-The front end exclusively uses javascript to load and manipulate the DOM as an example of avoiding refreshing to save bandwidth.
+The front end exclusively uses javascript to load and manipulate the DOM as an example of avoiding refreshing to save bandwidth (single page application concept).
 
 The following diagram is the business model (non-technical diagram) of the project:
 
